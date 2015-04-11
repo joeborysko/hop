@@ -1,5 +1,7 @@
 <?php
-	require_once( __DIR__ . "/../class.htmlElement.php" );
+	require_once( __DIR__ . "/../class.address.php" );
+	require_once( __DIR__ . "/../class.footer.php" );
+	require_once( __DIR__ . "/../../class.htmlElement.php" );
 	
 	class Header extends HTMLElement
 	{
@@ -20,12 +22,23 @@
 		{
 			return
 				$child->hasContentCategory( ContentCategory::FLOW ) &&
-				
+				!
+				(
+					$child instanceof Header ||
+					$child instanceof Footer
+				);				
 		}
 		
 		public function isAllowedParent( \IHTMLElement $parent )
 		{
-			return $parent->acceptsContentCategory( ContentCategory::FLOW );
+			return
+				$parent->acceptsContentCategory( ContentCategory::FLOW ) &&
+				!
+				(
+					$parent instanceof Address ||
+					$parent instanceof Footer ||
+					$parent instanceof Header
+				);
 		}
 		
 		public function acceptsContentCategory( $contentCategory )
