@@ -1,0 +1,109 @@
+body
+{
+	background-color: #D6D6D6;
+}
+
+h2,h3
+{
+	display: inline;
+	font-weight: normal;
+}
+
+label,h2,h3
+{
+	font-family: arial;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+textarea
+{
+	display: block;
+	width: 290px;
+}
+
+li textarea
+{
+	width: 100%;
+}
+
+input[type="text"],select,.addButton
+{
+	display: block;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+li
+{
+	border: solid 1px;
+	padding: 5px;
+	width: 300px;
+	margin-bottom: 15px;
+}
+
+.attribute
+{
+	background-color: #F5DAC9;
+}
+
+.constant
+{
+	background-color: #C9F5D7;
+}
+
+.parameter
+{
+	background-color: #C9E8F5;
+}
+
+.customMethod
+{
+	background-color: #F3C9F5;
+}
+
+.customMethodParametersList
+{
+	margin-top: 10px;
+}
+
+.parameter
+{
+	width: 85%;
+}
+
+.inputContainer
+{
+	margin-top: 15px;
+}
+
+li .inputContainer:first-of-type
+{
+	margin-top: 0px;
+}
+
+.inline-block:
+{
+	display: inline-block;
+}
+
+.removeButton
+{
+	float: right;
+}
+
+#constructorContainer
+{
+	border: solid 1px;
+	padding: 5px;
+	width: 300px;
+	background-color: #EFF5C9;
+}
+
+#constructorHeader
+{
+	display: block;
+}
