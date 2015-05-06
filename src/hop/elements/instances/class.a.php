@@ -24,7 +24,6 @@
 				ContentCategory::PALPABLE
 			);
 		}
-		
 		public function acceptsContentCategory( $contentCategory )
 		{
 			return
