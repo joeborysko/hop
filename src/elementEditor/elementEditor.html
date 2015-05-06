@@ -1,0 +1,224 @@
+<html>
+	<head>
+		<script src="jquery-1.11.2.js"></script>
+		<script src="elementEditor.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="elementEditor.css">
+		<title>HOP HTML Element Editor</title>
+		
+		<template id="attributeTemplate">
+			<li class="attribute">
+				<button class="removeButton">
+					Remove
+				</button>
+				<div class="inputContainer">
+					<label>
+						Name
+						<input class="attributeName" type="text">
+					</label>
+				</div>
+				<div class="inline-block">
+					<label>
+						<input class="isBoolean" type="checkbox" value="isBoolean">
+						Is boolean?
+					</label>
+				</div>
+				<div class="inline-block">
+					<label>
+						<input class="defaultToTrue" type="checkbox" value="defaultToTrue" checked>
+						Default to true?
+					</label>
+				</div>
+				<div class="inputContainer">
+					<label>
+						Documentation
+						<textarea class="attributeDocumentation" rows="3"></textarea>
+					</label>
+				</div>
+			</li>
+		</template>
+		<template id="constantTemplate">
+			<li class="constant">
+				<button class="removeButton">
+					Remove
+				</button>
+				<div class="inputContainer">
+					<label>
+						Name
+						<input class="constantName" type="text">
+					</label>
+				</div>
+				<div class="inputContainer">
+					<label>
+						Value 
+						<input class="constantValue" type="text">
+					</label>
+				</div>
+			</li>
+		</template>
+		<template id="customMethodTemplate">
+			<li class="customMethod">
+				<button class="removeButton">
+					Remove
+				</button>
+				<div class="inputContainer">
+					<label>
+						Name
+						<input class="customMethodName" type="text">
+					</label>
+				</div>
+				<div class="inputContainer">
+					<label>
+						Scope
+						<select class="scope">
+							<option value="private">
+								Private
+							</option>
+							<option value="protected">
+								Protected
+							</option>
+							<option value="public" selected>
+								Public
+							</option>
+						</select>
+					</label>
+				</div>
+				<div class="inputContainer">
+					<label>
+						Documentation
+						<textarea class="customMethodDocumentation" rows="3"></textarea>
+					</label>
+				</div>
+				<div class="inputContainer">
+					<h3>
+						Parameters
+					</h3>
+					<button class="addButton" class="addButton" class="addParameterButton">
+						Add
+					</button>
+					<ul class="customMethodParametersList">
+						<!--To be filled with #parameterTemplate's-->
+					</ul>
+				</div>
+				<div class="inputContainer">
+					<label>
+						Code
+						<textarea class="customMethodCode" rows="3"></textarea>
+					</label>
+				</div>
+			</li>
+		</template>
+		<template id="parameterTemplate">
+			<li class="parameter">
+				<button class="removeButton">
+					Remove
+				</button>
+				<label>
+					Name
+					<input class="customMethodParameterName" type="text">
+				</label>
+				<label>
+					Default
+					<input class="customMethodParameterDefault" type="text">
+				</label>
+				<label>
+					Documentation
+						<textarea id="customMethodParameterDocumentation" rows="3"></textarea>
+				</label>
+			</li class="inputContainer">
+		</template>
+	</head>
+	<body>
+		<main>
+			<h1>HOP HTML Element Editor</h1>
+			<form action="javascript:void(0);">
+				<button onclick="clearAll();">
+					Clear all
+				</button>
+				<div class="inputContainer">
+					<label>
+						Element name
+						<input id="elementName" type="text">
+					</label>
+					<button onclick="loadElement();">
+						Load
+					</button>
+				</div>
+				<div class="inputContainer">
+					<label>
+						Class name
+						<input id="className" type="text">
+					</label>
+				</div>
+				<div class="inputContainer">
+					<label>
+						<input id="isEmpty" type="checkbox" value="isEmpty">
+						Empty element?
+					</label>
+				</div>
+				<div class="inputContainer">
+					<label>
+						Documentation
+						<textarea id="elementDocumentation" rows="3"></textarea>
+					</label>
+				</div>
+				<div class="inputContainer">
+					<h2>
+						Attributes
+					</h2>
+					<button class="addButton" onclick="addAttribute();">
+						Add
+					</button>
+					<ul id="attributesList">
+						<!--To be filled with #attributeTemplate's-->
+					</ul>
+				</div>
+				<div class="inputContainer">
+					<h2>
+						Constants
+					</h2>
+					<button class="addButton" onclick="addConstant();">
+						Add
+					</button>
+					<ul id="constantsList">
+						<!--To be filled with #constantTemplate's-->
+					</ul>
+				</div>
+				<h2 id="constructorHeader">
+					Constructor
+				</h2>
+				<div id="constructorContainer">
+					<h3>
+						Parameters
+					</h3>
+					<button class="addButton" onclick="addConstructorParameter();">
+						Add
+					</button>
+					<ul id="constructorParametersList">
+						<!--To be filled with #parameterTemplate's-->
+					</ul>
+					<div class="inputContainer">
+						<label>
+							Code
+							<textarea id="constructorCode" rows="3" placeholder='Note that "parent::__construct();" will be written for you.'></textarea>
+						</label>
+					</div>
+				</div>
+				<div class="inputContainer">
+					<h2>
+						Custom Methods
+					</h2>
+					<button class="addButton" onclick="addCustomMethod( this );">
+						Add
+					</button>
+					<ul id="customMethodsList">
+						<!--To be filled with #customMethodTemplate's-->						
+					</ul>
+				</div>
+				<button onclick="save();">
+					Save
+				</button>
+			</form>
+		</main>
+	</body>
+</html>

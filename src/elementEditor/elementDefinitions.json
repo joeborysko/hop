@@ -1,0 +1,52 @@
+[
+	{
+		"name": "div",
+		"className": "Div",
+		"emptyElement": false,
+		"documentation": "blah blah blah",
+		"attributes":
+		[
+			{
+				"name": "id",
+				"isBoolean": false,
+				"documentation": "blah blah blah"
+			}
+		],
+		"constants":
+		[
+			{
+				"name": "TEST_CONSTANT",
+				"value": "test"
+			}
+		],
+		"constructor":
+		{
+			"parameters":
+			[
+				{
+					"name": "foo",
+					"default": "bar",
+					"documentation": "blah blah blah"
+				}
+			],
+			"code": ""
+		},
+		"customMethods":
+		[
+			{
+				"name": "doSomething",
+				"scope": "public",
+				"documentation": "blah blah blah",
+				"parameters":
+				[
+					{
+						"name": "foo",
+						"default": "bar",
+						"documentation": "blah blah blah"
+					}
+				],
+				"code": "$x = 0; echo( $x );"
+			}
+		]
+	}
+]

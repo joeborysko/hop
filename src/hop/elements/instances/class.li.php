@@ -24,8 +24,8 @@
 		public function isAllowedParent( \IHTMLElement $parent )
 		{
 			return
-				$parent instanceof UnsortedList ||
-				$parent instanceof OrderedList /*||
+				$parent instanceof UL ||
+				$parent instanceof OL /*||
 				$parent instanceof Menu*/;
 		}
 		

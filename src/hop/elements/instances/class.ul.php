@@ -6,7 +6,7 @@
 	/**
 	 * Represents the <ul> element.
 	 */
-	class UnsortedList extends HTMLElement
+	class UL extends HTMLElement
 	{
 		public function __construct()
 		{

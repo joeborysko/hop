@@ -6,7 +6,7 @@
 	/**
 	 * Represents the <ol> element.
 	 */
-	class OrderedList extends HTMLElement
+	class OL extends HTMLElement
 	{
 		public function __construct()
 		{
