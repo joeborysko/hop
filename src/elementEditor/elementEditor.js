@@ -102,7 +102,13 @@ function buildElementObject()
 	var element = { };
 	element.name = $( "#elementName" ).val();
 	element.className = $( "#className" ).val();
+	
 	element.directory = $( "#directory" ).val();
+	if ( element.directory === "" )
+	{
+		element.directory = "./";
+	}
+	
 	element.emptyElement = $( "#isEmpty" ).is( ":checked" );
 	element.documentation = removeLineBreaks( $( "#elementDocumentation" ).val() );
 	
@@ -116,10 +122,6 @@ function buildElementObject()
 		
 		attribute.name = attributeJQuery.find( ".attributeName" ).val();
 		attribute.isBoolean = attributeJQuery.find( ".isBoolean" ).is( ":checked" );
-		if ( attribute.isBoolean )
-		{
-			attribute.defaultToTrue = attributeJQuery.find( ".defaultToTrue" ).is( ":checked" );
-		}
 		attribute.documentation = removeLineBreaks( attributeJQuery.find(
 			".attributeDocumentation" ).val() );
 		
@@ -269,13 +271,7 @@ function buildForm( element )
 			var attribute = attributes[ i ];
 			var attributeJQuery = addAttribute();
 			attributeJQuery.find( ".attributeName" ).val( attribute.name );
-			attributeJQuery.find( ".isBoolean" ).prop( "checked", attribute.isBoolean );
-			
-			if ( attribute.isBoolean && ! attribute.defaultToTrue )
-			{
-				attributeJQuery.find( ".defaultToTrue" ).prop( "checked", false );
-			}		
-			
+			attributeJQuery.find( ".isBoolean" ).prop( "checked", attribute.isBoolean );			
 			attributeJQuery.find( ".attributeDocumentation" ).val( attribute.documentation );
 		}
 	}
