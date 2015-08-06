@@ -64,7 +64,7 @@
 				<div class="inputContainer">
 					<label>
 						Scope
-						<select class="customMethodScope">
+						<select class="scope">
 							<option value="private">
 								Private
 							</option>
@@ -109,15 +109,15 @@
 				</button>
 				<label>
 					Name
-					<input class="parameterName" type="text">
+					<input class="customMethodParameterName" type="text">
 				</label>
 				<label>
 					Default
-					<input class="parameterDefault" type="text">
+					<input class="customMethodParameterDefault" type="text">
 				</label>
 				<label>
 					Documentation
-						<textarea class="parameterDocumentation" rows="3"></textarea>
+						<textarea id="customMethodParameterDocumentation" rows="3"></textarea>
 				</label>
 			</li class="inputContainer">
 		</template>
@@ -142,12 +142,6 @@
 					<label>
 						Class name
 						<input id="className" type="text">
-					</label>
-				</div>
-				<div class="inputContainer">
-					<label>
-						Relative Directory
-						<input id="directory" placeholder="./" type="text">
 					</label>
 				</div>
 				<div class="inputContainer">
